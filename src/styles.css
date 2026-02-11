@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* html, body {
+  height: 10000px;
+  margin: 0;
+} */
+/* body {
+  padding-top: 100px;
+} */
+ html {
+  scroll-behavior: smooth;
+}
+:root{
+  --green-color: #198754;
+  --orange-color: #fd7e14;
+  --orange-two-color: #ff7a00;
+}
+  .btn-orange {
+    background-color: var(--orange-color);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+  }
+

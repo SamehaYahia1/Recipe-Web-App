@@ -1,0 +1,28 @@
+@media screen and (min-width: 640px) {
+  .mega-menu {
+    width: 640px;
+    transform: translate3d(-120px, 4px, 0) !important;
+  }
+}
+.column-menu{
+  column-count: 3;
+  column-gap: 1.5rem;
+  max-height: 420px;
+  overflow-y: auto;
+}
+.columns-menu li {
+  break-inside: avoid;
+}
+
+@media (max-width: 991px) {
+  .columns-menu {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .columns-menu {
+    column-count: 1;
+  }
+}
+

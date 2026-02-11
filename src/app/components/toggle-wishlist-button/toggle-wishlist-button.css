@@ -1,0 +1,21 @@
+.favorite-btn {
+  position: absolute;
+  top: 0.75rem; 
+  right: 0.75rem;
+  z-index: 10;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+.wishlist-active {
+  color: red;
+}
+.wishlist-inactive {
+  color: gray;
+}

@@ -1,0 +1,29 @@
+
+<div class="pt-5 bg-white">
+  <div class="container">
+    <p class="fw-bold fs-3 mb-5 section-title">Popular Categories</p>
+
+    <div class="row ">
+
+      <div class="col-6 col-md-4 col-lg-3"
+           *ngFor="let category of store.categories()"
+           (click)="selectCategory(category.strCategory)"
+           style="cursor: pointer;">
+
+        <div class="category-img">
+          <img [src]="category.strCategoryThumb"
+               [alt]="category.strCategory"
+               />
+        </div>
+
+        <p class="fw-semibold fs-5 text-center mt-3">
+          {{ category.strCategory }}
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+

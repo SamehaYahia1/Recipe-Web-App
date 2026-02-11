@@ -1,0 +1,5 @@
+      <button class="favorite-btn d-flex align-items-center justify-content-center bg-white"
+      matIconButton
+      (click)="toggleWishList(recipe()); $event.stopPropagation()"><mat-icon
+      [ngClass]="isInWhishList(recipe()) ? 'wishlist-active' : 'wishlist-inactive'">{{isInWhishList(recipe()) ? 'favorite' : 'favorite_border'}}</mat-icon>
+    </button>

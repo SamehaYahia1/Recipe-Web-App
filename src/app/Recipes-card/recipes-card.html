@@ -1,0 +1,23 @@
+<div class="recipe-card card " (click)="onRecipeClick()">
+  <img
+    [src]="meal.strMealThumb"
+    alt="recipe"
+    class="img-fluid"
+  />
+  <ng-content/>
+  <div class="text-center p-2">
+    <h5 class="fw-bold fs-6">
+      {{ meal.strMeal }}
+    </h5>
+    <div class="d-flex gap-4 align-items-center justify-content-center ">
+          <span class="area rounded-3 p-1 mt-2 mb-3 ">
+      {{ meal.strArea }}
+    </span>
+    <span class="category rounded-3 p-1 mt-2 mb-3">
+      {{ meal.strCategory }}
+    </span>
+    </div>
+
+  </div>
+
+</div>

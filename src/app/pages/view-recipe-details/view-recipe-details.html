@@ -1,0 +1,96 @@
+
+<div *ngIf="store.selectedRecipe() as meal" class="recipe-details-container">
+  <div class="hero">
+    <img
+      [src]="meal.strMealThumb"
+      alt="recipe"
+      class="hero-img"
+    />
+  </div>
+
+  <div class="mt-4">
+
+    <h1 class="fw-bold">
+      {{ meal.strMeal }}
+    </h1>
+
+    <div class="d-flex gap-2">
+      <span class="badge category">
+        {{ meal.strCategory }}
+      </span>
+
+      <span class="badge area">
+        {{ meal.strArea }}
+      </span>
+    </div>
+  </div>
+  <div class="content-grid mt-4 gap-5">
+    <div class="ingredients-card">
+      <div>
+        <h3 class="fw-bold">
+          Ingredients ({{ meal.ingredients?.length }})
+        </h3>
+      </div>
+      <ul class="ingredients-list">
+        <li *ngFor="let ing of meal.ingredients">
+        <label class="">
+          <input type="checkbox" class="accent-checkbox me-2">
+          <span class="measure">
+            {{ ing.measure }}
+          </span>
+          <span class="fw-semibold ingredient-name ">
+            {{ ing.name }}
+          </span>
+          </label>
+        </li>
+
+      </ul>
+
+    </div>
+    <div class="instruction-card">
+      <div
+        class="instruction-header d-flex align-items-center justify-content-between"
+        (click)="toggleInstructions()"
+      >
+        <h3 class="fw-bold">Instructions</h3>
+
+        <span
+          class="arrow"
+          [class.rotate]="isOpen()"
+        >
+          ▼
+        </span>
+      </div>
+      <div
+        class="instruction-body mt-2"
+        [class.open]="isOpen()"
+      >
+        {{ meal.strInstructions }}
+      </div>
+
+    </div>
+
+  </div>
+
+<div *ngIf="meal.strYoutube" class="text-center mt-5 mb-5">
+  <p class="fs-6 video-text">Wanna see a video? 🍳</p>
+  <a
+    [href]="meal.strYoutube"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-decoration-none"
+  >
+    <div class="video-card d-flex align-items-center gap-3">
+      <img
+        src="https://img.youtube.com/vi/{{ extractYoutubeId(meal.strYoutube) }}/hqdefault.jpg"
+        alt="Recipe Video"
+        class="video-thumb"
+      />
+      <span class="fs-5 fw-semibold" style="color: var(--orange-color);">Watch on YouTube </span>
+    </div>
+  </a>
+</div>
+
+
+</div>
+

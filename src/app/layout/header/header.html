@@ -1,0 +1,100 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light ps-5 pe-5 fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="assets/imgs/logo.png" width="70" height="70" alt="logo"/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto text-center gap-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="/home">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Category</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Area</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav-link active" href="/contact-us">About us</a>
+        </li>
+      </ul>
+      <div class="d-flex align-items-center ms-auto">
+        <button class="btn position-relative" routerLink="/wishlist"
+        [matBadge]="store.wishListCount()"
+          [matBadgeHidden]="store.wishListCount()=== 0">
+          <i class="fa-solid fa-heart fs-4 text-danger"></i>
+        </button>
+
+        <button class="btn position-relative" routerLink="/cart">
+          <i class="fa-solid fa-person fs-4"></i>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</nav>
+ -->
+
+ <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiar fixed-top" data-bs-theme="dark">
+  <div class="container"><a class="navbar-brand fw-bold">Food Recipe</a>
+    <button class="navbar navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMegaMenu" aria-controls="navbarMegaMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-white"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarMegaMenu">
+      <ul class="navbar-nav">
+        <li>
+          <a href="#" class="nav-link px-3 text-white">Home</a>
+        </li>
+        <li class="dropdown">
+          <a class="nav-link px-3 text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Category</a>
+          <ul class="dropdown-menu mega-menu dropdown-menu-dark column-menu">
+                <li *ngFor="let category of store.listOfCategories()">
+                  <a class="dropdown-item" (click)="getMealsByCategory(category.strCategory)">{{ category.strCategory }}</a>
+                </li>
+
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="nav-link px-3 text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Area</a>
+          <ul class="dropdown-menu mega-menu dropdown-menu-dark column-menu">
+                <li *ngFor="let area of store.listOfAreas()">
+                  <a class="dropdown-item" (click)="getMealsByArea(area.strArea)">{{ area.strArea }}</a>
+                </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="nav-link px-3 text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Ingredient</a>
+          <ul class="dropdown-menu mega-menu dropdown-menu-dark column-menu">
+                <li *ngFor="let ing of store.listOfIngredients()">
+                  <a class="dropdown-item" (click)="getMealsByIngredient(ing.strIngredient)">{{ ing.strIngredient }}</a>
+                </li>
+          </ul>
+        </li>
+        <li>
+          <a routerLink="/" fragment="about-us" class="nav-link px-3 text-white">About us</a>
+        </li>
+      </ul>
+            <div class="d-flex align-items-center ms-auto">
+        <button class="btn position-relative" routerLink="/wishlist"
+        [matBadge]="store.wishListCount()"
+          [matBadgeHidden]="store.wishListCount()=== 0">
+          <i class="fa-solid fa-heart fs-4 text-danger"></i>
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+ </nav>

@@ -1,0 +1,69 @@
+
+.newsletter{
+  background:#f8f9fa;
+}
+
+.email-input{
+  max-width:350px;
+  border-radius:10px;
+  padding:12px;
+}
+
+/* Orange button (reuse your theme color if you have one) */
+.btn-orange{
+  background-color:#f57c00;
+  color:white;
+  border:none;
+  padding:12px 24px;
+  border-radius:10px;
+  font-weight:600;
+}
+
+.btn-orange:hover{
+  background-color:#e56f00;
+}
+
+/* Footer */
+.main-footer{
+  /* background: var(--green-color); */
+  background-color:#212529;
+
+}
+
+.main-footer a{
+  color:#d6e4f0;
+  text-decoration:none;
+}
+
+.main-footer a:hover{
+  color:white;
+}
+
+.text-orange{
+  color:#f57c00;
+}
+
+/* Social icons */
+.social{
+  background:#f57c00;
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+  cursor:pointer;
+  transition:.3s;
+}
+
+
+.social:hover{
+  transform:translateY(-5px);
+}
+
+.footer-line{
+  border-color:rgba(255,255,255,.2);
+  margin:25px 0;
+}

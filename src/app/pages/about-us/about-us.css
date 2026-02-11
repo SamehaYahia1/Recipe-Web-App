@@ -1,0 +1,17 @@
+.box{
+  height: 650px;
+}
+.about-us{
+  color: var(--green-color);
+}
+
+.paragraph::after{
+  margin-top: 5px;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: var(--orange-color);
+
+}
+

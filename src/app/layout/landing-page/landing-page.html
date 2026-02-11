@@ -1,0 +1,62 @@
+<div class="position-relative hero-wrapper">
+  <img
+    src="assets/imgs/search.jpg"
+    alt="landing-page"
+    class="w-100 object-fit-cover"
+    style="height: 100vh;"
+  />
+  <div class="position-absolute top-50 start-0 translate-middle-y  ps-5 ">
+    <h1 class="fw-bold display-4">
+      Different <br />Recipes New Flavours
+    </h1>
+    <h4 class="mt-5">
+      Orgus Gives Premium Quality Healthy
+      and Natural Food
+    </h4>
+    <h4 class="mt-5 recipes"> Get Our Recipes Now
+    </h4>
+  <form class="form-inline my-2 my-lg-0 d-flex gap-3 pt-3" (ngSubmit)="store.searchMeals(searchInput.value)">
+      <input #searchInput class="form-control mr-sm-2 rounded-4" type="search" placeholder="e.g cake,Vegan, Chicken">
+      <button class="btn btn-success rounded-3 my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+<!--category section-->
+<app-categories></app-categories>
+<!-- recipes section -->
+<div class="recipes-section">
+  <div class="container py-5">
+  <div class="row">
+    <div class="d-flex flex-row justify-content-between align-items-center mb-4 ">
+    <p class="fw-bold fs-3 mb-5 section-title">Our Recipes</p>
+    <button class="btn btn-success px-4 rounded-3 mb-4"
+              *ngIf="store.hasMoreMeals()"
+              (click)="store.viewMore()">
+        View More
+      </button>
+    </div>
+          <div
+        class="col-12 text-center py-5"
+        *ngIf="store.visibleMeals().length === 0">
+        <p class="fs-5 text-muted">
+          Search for a recipe to start cooking 🍝
+        </p>
+      </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4"
+         *ngFor="let meal of store.visibleMeals()">
+
+      <app-recipes-card [meal]="meal">
+        <app-toggle-wishlist-button [recipe]="meal"/>
+      </app-recipes-card>
+
+    </div>
+
+  </div>
+
+</div>
+  <section id="about-us">
+  <app-about-us></app-about-us>
+</section>
+</div>
+
+
